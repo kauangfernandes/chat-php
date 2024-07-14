@@ -26,7 +26,7 @@
 <body>
     <?php require_once "header.php"; ?>
 
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
             <?php
                 require_once "../app/views/pages/{$page}.php";

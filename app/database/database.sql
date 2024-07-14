@@ -10,6 +10,12 @@ CREATE TABLE users(
 	PASSWORD VARCHAR(128) NOT NULL
 );
 
+USE chat;
+INSERT INTO users (NAME, email, PASSWORD) VALUES 
+("Kauan", "kauan@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
+("Sandra", "sam@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW");
+
+#PASSWORD => senha1234;
 DROP TABLE IF EXISTS chats;
 CREATE TABLE chats(
 	id_chat INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -23,13 +29,17 @@ CREATE TABLE chats(
 	FOREIGN KEY (id_user_two) REFERENCES users (id_user)
 );
 
+USE chat;
+INSERT INTO chats (id_user_one, id_user_two) VALUES
+(1, 2);
+
 DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
 	id_messages INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	message VARCHAR(250) NOT NULL,
-	viewed BOOL NOT NULL DEFAULT 0,
-	send_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	viewing_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	#viewed BOOL NOT NULL DEFAULT 0,
+	#send_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	#viewing_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	
 	id_user INT NOT NULL,
 	FOREIGN KEY (id_user) REFERENCES users (id_user),
@@ -37,3 +47,8 @@ CREATE TABLE messages(
 	id_chat INT NOT NULL,
 	FOREIGN KEY (id_chat) REFERENCES chats (id_chat)
 );
+
+USE chat;
+INSERT INTO messages (message, id_user, id_chat) VALUES
+("Oi, Sam", 1, 1),
+("Oi, Kauan", 2, 1);

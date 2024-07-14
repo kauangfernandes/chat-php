@@ -25,8 +25,9 @@
 
         private function initRoutes(){
             $this->getHttp("/", [indexController::class, "index"]);
-            //$this->getHttp("/login", [exemploController::class, "login"]);
-            //$this->postHttp("/validar_login", [exemploController::class, "Altenticar"]);
+
+            $this->getHttp("/login", [usersController::class, "login"]);
+            $this->postHttp("/login", [usersController::class, "login"]);
         }
 
         private function runRoutes(){

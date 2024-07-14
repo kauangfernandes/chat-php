@@ -1,0 +1,7 @@
+.h100-vh{
+    min-height: calc(100vh - 6rem) !important;
+}
+
+#modal{
+    background: #000000a4 !important;
+}

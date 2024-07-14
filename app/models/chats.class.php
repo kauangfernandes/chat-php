@@ -8,12 +8,12 @@
 
         }
 
-        public function __get(string $sttr){
-            return $this->$sttr;
+        public function __get(string $attr){
+            return $this->$attr;
         }
 
-        public function __set(string $sttr, $value){
-            $this->$sttr = $value;
+        public function __set(string $attr, $value){
+            $this->$attr = $value;
         }
     }
 

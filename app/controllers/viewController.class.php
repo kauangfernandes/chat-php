@@ -3,15 +3,16 @@
     class viewController{
         public function __construct(
             protected string $title = "",
-            protected string $nameApp = "Framework",
+            protected string $nameApp = "Chat",
             protected string $template = "default",
             protected string $page = "not_found",
             protected array $css = array("styles"),
             protected array $js = array("index"),
-            protected $results = null,
+            protected array $results = array(),
             protected $object = null
         ){
             $this->object = new \stdClass();
+            require_once "../app/client/session.php";
         }
 
         public function render(){
