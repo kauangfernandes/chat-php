@@ -1,1 +1,1 @@
-# chat-websocket-php
+# chat-php
