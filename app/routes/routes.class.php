@@ -27,7 +27,12 @@
             $this->getHttp("/", [indexController::class, "index"]);
 
             $this->getHttp("/login", [usersController::class, "login"]);
+            $this->getHttp("/logoff", [usersController::class, "logoff"]);
+
             $this->postHttp("/login", [usersController::class, "login"]);
+
+            //CHAT
+            $this->getHttp("/chat", [chatsController::class, "entrarChat"]);
         }
 
         private function runRoutes(){

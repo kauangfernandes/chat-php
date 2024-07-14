@@ -37,9 +37,6 @@ DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
 	id_messages INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	message VARCHAR(250) NOT NULL,
-	#viewed BOOL NOT NULL DEFAULT 0,
-	#send_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	#viewing_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	
 	id_user INT NOT NULL,
 	FOREIGN KEY (id_user) REFERENCES users (id_user),
@@ -52,3 +49,8 @@ USE chat;
 INSERT INTO messages (message, id_user, id_chat) VALUES
 ("Oi, Sam", 1, 1),
 ("Oi, Kauan", 2, 1);
+
+SELECT c.id_chat, u.id_user, u.name, u.email  FROM chats c
+INNER JOIN users u
+ON(c.id_user_two=u.id_user)
+WHERE c.id_user_one = 1;

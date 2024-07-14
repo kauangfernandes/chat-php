@@ -91,7 +91,7 @@
                         $_SESSION['logado'] = true;
                         $_SESSION['nome'] = $user->name;
                         $_SESSION['email'] = $user->email; 
-                        $_SESSION['id_usuario'] = $user->id_user;
+                        $_SESSION['id_user'] = $user->id_user;
                     }
 
                 } else {

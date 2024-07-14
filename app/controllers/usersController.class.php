@@ -67,6 +67,13 @@
             $this->__set("js", "login");
             $this->render();
         }
+
+        public function logoff(){
+            session_unset();
+            session_destroy();
+            header("Location: /");
+            die();
+        }
     }
 
 ?>

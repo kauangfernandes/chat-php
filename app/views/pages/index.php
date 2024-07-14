@@ -1,6 +1,19 @@
-<div>
-    Hello Word
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <?php
+        if(is_array($results[0]) && count($results[0]) > 0){
+            foreach ($results[0] as $chat) {
+                echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_chat}'>{$chat->name} | {$chat->email}</a></li>";
+            }
+
+        } else {
+            echo "<li class='list-group-item'>Nenhum chat encontrado.</li>";
+        }
+    ?>
+    
+  </ul>
 </div>
+
 
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="meuModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
