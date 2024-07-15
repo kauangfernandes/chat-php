@@ -8,16 +8,16 @@
                 </div>
 
                 <button class="navbar-toggler d-lg-none focus-ring focus-ring-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class='material-symbols-outlined'>Meenu</span>
+                    <span class='material-symbols-outlined'>Menu</span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav col col-sm-12 col-lg-8 col-xl-6 mb-lg-0 justify-content-end w-100">
-                        <li class="text-light px-0 px-sm-0 d-md-flex justify-content-lg-center align-items-md-center">Seja muito bem-vindo, <?php echo $_SESSION['nome'] ?></li>
-                        <li class="text-light px-0 px-sm-0 d-md-flex justify-content-lg-center align-items-md-center">&nbsp|&nbsp</li>
+                        
                         <?php
                         if ($_SESSION["logado"]) {
                             echo "
+                                    <li class='text-light px-0 px-sm-0 d-md-flex justify-content-lg-center align-items-md-center'>Seja muito bem-vindo, {$_SESSION['nome']}</li>
                                     <li class='nav-item px-0 px-sm-0 d-md-flex justify-content-lg-center align-items-md-center'>
                                         <a class='nav-link text-danger' aria-current='' href='/logoff'>Sair</a>
                                     </li>

@@ -33,6 +33,7 @@
 
             //CHAT
             $this->getHttp("/chat", [chatsController::class, "entrarChat"]);
+            $this->postHttp("/chat", [chatsController::class, "entrarChat"]);
         }
 
         private function runRoutes(){

@@ -3,7 +3,13 @@
     <?php
         if(is_array($results[0]) && count($results[0]) > 0){
             foreach ($results[0] as $chat) {
-                echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_chat}'>{$chat->name} | {$chat->email}</a></li>";
+
+                if($_SESSION['id_user'] == $chat->id_user_one){
+                    echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_user_two}'>{$chat->user_two_name} | {$chat->email}</a></li>";
+                } else {
+                    echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_user_one}'>{$chat->user_one_name} | {$chat->email}</a></li>";
+                }
+
             }
 
         } else {

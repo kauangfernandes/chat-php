@@ -15,6 +15,12 @@
                 die();
             }
 
+            if($_GET){
+                if($_GET['id_chat']){
+
+                }
+            }
+
             $this->__set(attr:"title", value:"Chat Privado");
             $this->__set(attr:"page", value:"chat");
             $this->render();
