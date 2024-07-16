@@ -1,6 +1,16 @@
 <div id="cont-message" class="messages">
     <ul class="list-group list-group-flush">
-
+        <?php
+            if(is_array($results[1])){
+                foreach ($results[1] as $message) {
+                    if($message->id_user == $_SESSION['id_user']){
+                        echo "<li class='list-group-item d-flex justify-content-end'>{$message->message}</li>";
+                    } else {
+                        echo "<li class='list-group-item'>{$message->message}</li>";
+                    }
+                }
+            }
+        ?>
     </ul>
 </div>
 

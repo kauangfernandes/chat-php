@@ -31,5 +31,5 @@ function getMessages(url){
             console.log(error);
         });
 
-    }, 5000);
+    }, 10000);
 }
