@@ -54,7 +54,7 @@
                         $msg_erro[0] = $validacao['msg'];
                     } else {
                         if($_SESSION['email'] != null){
-                            header("Location: /?login=seucesso");
+                            header("Location: /?login=sucesso");
                             die();
                         }
                     }
@@ -64,7 +64,6 @@
             $this->__set(attr:"results", value:$msg_erro);
             $this->__set("title", "Login");
             $this->__set("page", "login");
-            $this->__set("js", "login");
             $this->render();
         }
 

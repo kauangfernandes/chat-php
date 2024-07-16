@@ -5,9 +5,9 @@
             foreach ($results[0] as $chat) {
 
                 if($_SESSION['id_user'] == $chat->id_user_one){
-                    echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_user_two}'>{$chat->user_two_name} | {$chat->email}</a></li>";
+                    echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_chat}&id_user_two={$chat->id_user_two}'>{$chat->user_two_name} | {$chat->email_user_two}</a></li>";
                 } else {
-                    echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_user_one}'>{$chat->user_one_name} | {$chat->email}</a></li>";
+                    echo "<li class='list-group-item'><a href='/chat?id_chat={$chat->id_chat}&id_user_one={$chat->id_user_one}'>{$chat->user_one_name} | {$chat->email_user_one}</a></li>";
                 }
 
             }

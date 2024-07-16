@@ -124,5 +124,22 @@
             }
         }
 
+        public function bucarDadosUsuarioId($user){
+            $sql = "
+                    SELECT id_user , name, email
+                    from users 
+                    where id_user = ?
+                ";
+            try {
+                $stm = $this->db->prepare($sql);
+                $stm->bindValue(1, $user->__get(attr:"id_user"));
+                $stm->execute();
+                $this->db = null;
+                return $stm->Fetch(PDO::FETCH_OBJ);
+            } catch (PDOException $e) {
+                echo "Erro, Message: {$e->getMessage()}\n Code:{$e->getCode()}";
+            }
+        }
+
     }
 ?>

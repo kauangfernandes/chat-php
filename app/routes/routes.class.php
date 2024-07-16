@@ -26,6 +26,7 @@
         private function initRoutes(){
             $this->getHttp("/", [indexController::class, "index"]);
 
+            //USERS
             $this->getHttp("/login", [usersController::class, "login"]);
             $this->getHttp("/logoff", [usersController::class, "logoff"]);
 
@@ -34,6 +35,9 @@
             //CHAT
             $this->getHttp("/chat", [chatsController::class, "entrarChat"]);
             $this->postHttp("/chat", [chatsController::class, "entrarChat"]);
+
+            //MESSAGE
+            $this->getHttp("/getMessages", [messageController::class, "getMessages"]);
         }
 
         private function runRoutes(){

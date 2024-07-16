@@ -1,5 +1,5 @@
 <?php
-    class ChatDAO{
+    class MessageDAO{
         public function __construct(
             private $db = null
         ){
@@ -7,7 +7,7 @@
 
         public function __destruct(){}
 
-        public function srcAllChatsUsers($user){
+        public function srcUserChat($user){
             try {
                 $sql = "
                     SELECT c.*, u1.NAME AS user_one_name, u1.email email_user_one, u2.NAME AS user_two_name, u2.email email_user_two

@@ -7,7 +7,8 @@
             private string $password = "",
 
             private string $message = "",
-            private string $send_date = ""
+            private string $send_date = "",
+            private $chat = null
         ){
             $message = new Messages(message:$this->message);
         }
