@@ -88,6 +88,18 @@ INNER JOIN users u1 ON c.id_user_one = u1.id_user
 INNER JOIN users u2 ON c.id_user_two = u2.id_user
 WHERE c.id_user_one = 2 OR c.id_user_two = 2
 
+SELECT c.*, u1.NAME AS user_one_name, u1.email email_user_one, u2.NAME AS user_two_name, u2.email email_user_two
+FROM chats c
+INNER JOIN users u1 ON c.id_user_one = u1.id_user
+INNER JOIN users u2 ON c.id_user_two = u2.id_user
+WHERE c.id_user_one = 2 OR c.id_user_two = 2
+
+SELECT c.*, u1.NAME AS user_one_name, u1.email, u2.NAME AS user_two_name, u2.email
+FROM chats c
+INNER JOIN users u1 ON c.id_user_one = u1.id_user
+INNER JOIN users u2 ON c.id_user_two = u2.id_user
+WHERE c.id_chat = 2 AND (c.id_user_one = 2 OR c.id_user_two = 2)
+
 
 SELECT * 
 FROM messages 
