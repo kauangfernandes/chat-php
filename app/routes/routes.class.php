@@ -29,6 +29,7 @@
             //USERS
             $this->getHttp("/login", [usersController::class, "login"]);
             $this->getHttp("/logoff", [usersController::class, "logoff"]);
+            $this->getHttp("/getIdUserSession", [usersController::class, "getIdUserSession"]);
 
             $this->postHttp("/login", [usersController::class, "login"]);
 

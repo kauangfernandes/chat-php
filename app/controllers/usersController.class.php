@@ -73,6 +73,17 @@
             header("Location: /");
             die();
         }
+
+        public function getIdUserSession(){
+            if($_SESSION['logado'] != true){
+                header("location: /login");
+                die();
+            }
+            
+            $id_user = json_encode($_SESSION['id_user']);
+            print_r($id_user);
+            return $id_user;
+        }
     }
 
 ?>

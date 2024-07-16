@@ -13,7 +13,7 @@ CREATE TABLE users(
 USE chat;
 INSERT INTO users (NAME, email, PASSWORD) VALUES 
 ("Kauan", "kauan@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
-("Sandra", "sam@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
+("Sam", "sam@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
 ("X", "x@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
 ("Y", "y@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW");
 
@@ -39,7 +39,7 @@ INSERT INTO chats (id_user_one, id_user_two) VALUES
 
 DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
-	id_messages INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id_message INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	message VARCHAR(250) NOT NULL,
 	
 	id_user INT NOT NULL,
@@ -80,7 +80,7 @@ SELECT
 	(SELECT name FROM users WHERE id_user= 1) "nome_1"
 FROM chats
 WHERE id_user_one = 1 OR id_user_two = 1;
-*/
+
 
 SELECT c.*, u1.NAME AS user_one_name, u1.email, u2.NAME AS user_two_name, u2.email
 FROM chats c
@@ -101,7 +101,15 @@ INNER JOIN users u2 ON c.id_user_two = u2.id_user
 WHERE c.id_chat = 2 AND (c.id_user_one = 2 OR c.id_user_two = 2)
 
 
-SELECT * 
-FROM messages 
-WHERE id_chat = 1
+SELECT m.id_message, m.message, u.id_user, u.name
 
+SELECT *
+FROM messages m
+INNER JOIN  users u
+ON(m.id_user=u.id_user)
+WHERE m.id_chat = 1
+
+USE chat;
+INSERT INTO messages (message, id_user, id_chat) VALUES
+("Oi, ola ola", 1, 1);
+*/

@@ -17,7 +17,6 @@ function getUrl(){
     const titulo = document.getElementById("meuModalLabel");
     let texto = titulo.lastChild;
     titulo.removeChild(texto);
-    console.log(texto);
     
     texto = document.createTextNode("OPS, aconteceu algo de errado :/");
     titulo.appendChild(texto);
@@ -62,3 +61,20 @@ closeConinue.addEventListener('click', function() {
   modal.classList.add('none');
   removeParametro();
 });
+
+function exibirModalSpinner(param) {
+  let modal = window.document.getElementById("modal-spinner");
+  modal.classList.add(param);
+  modal.classList.add('d-block');
+}
+
+
+function closeModalSpinner(){
+  let modal = window.document.getElementById("modal-spinner");
+  modal.classList.remove('show');
+  modal.setAttribute('aria-modal', 'false');
+  modal.setAttribute('data-bs-backdrop', '');
+  modal.setAttribute('data-bs-keyboard', '');
+  modal.classList.remove('d-block');
+  modal.classList.add('none');
+}

@@ -41,13 +41,6 @@
                         header("Location: /?acesso=negado");
                     }
 
-                    $chatDAO = new ChatDAO(db:$this->connection);
-                    $messages = $chatDAO->getAllMessageChat(chat:$chat);
-
-                    if(is_array($messages)){
-                        $this->__set(attr:"results", value:$messages);
-                    }
-
                 } else {
                     header("Location: /?acesso=negado");
                 }

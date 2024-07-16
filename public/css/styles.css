@@ -2,6 +2,10 @@
     min-height: calc(100vh - 6rem) !important;
 }
 
-#modal{
+#modal, #modal-spinner{
     background: #000000a4 !important;
+}
+
+.messages{
+    height: calc(100vh - 6rem);
 }
