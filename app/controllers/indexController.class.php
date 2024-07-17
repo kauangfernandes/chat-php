@@ -24,7 +24,6 @@
             $this->__set(attr:"title", value:"Hello word");
             $this->__set(attr:"results", value:$chats);
             $this->__set(attr:"page", value:"index");
-            $this->__set(attr:"js", value:"login");
             $this->render();
         }
     }

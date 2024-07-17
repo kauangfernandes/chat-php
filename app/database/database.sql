@@ -13,7 +13,6 @@ CREATE TABLE users(
 USE chat;
 INSERT INTO users (NAME, email, PASSWORD) VALUES 
 ("Kauan", "kauan@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
-("Sam", "sam@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
 ("X", "x@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW"),
 ("Y", "y@gmail.com", "$2y$10$djtr.z1wBlEBtMpEip3u1ulPa7S3JeQPG6rh5qbsKYX9eAPFHtrQW");
 
@@ -51,7 +50,7 @@ CREATE TABLE messages(
 
 USE chat;
 INSERT INTO messages (message, id_user, id_chat) VALUES
-("Oi, Sam", 1, 1),
+("Oi, X", 1, 1),
 ("Oi, Kauan", 2, 1),
 ("Oi, X", 1, 2),
 ("Oi, Kauan", 3, 2);

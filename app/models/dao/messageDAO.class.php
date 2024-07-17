@@ -47,5 +47,23 @@
             }
         }
 
+
+        public function enviarMenssagem($user){
+            try {
+                $sql = "
+                    INSERT INTO messages (message, id_user, id_chat) VALUES (?, ?, ?)
+                ";
+                $stm = $this->db->prepare($sql);
+                $stm->bindValue(1, $user->__get(attr:"message"));
+                $stm->bindValue(2, $user->__get(attr:"id_user"));
+                $stm->bindValue(3, $user->__get(attr:"chat")->__get(attr:"id_chat"));
+                $stm->execute();
+                $this->db = null;
+                return true;
+            } catch (PDOException $e) {
+                echo "Erro, Message: {$e->getMessage()}\n Code:{$e->getCode()}";
+            }
+        }
+
     }
 ?>

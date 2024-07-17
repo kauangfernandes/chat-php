@@ -49,7 +49,7 @@ closeButton.addEventListener('click', function() {
   modal.setAttribute('data-bs-keyboard', '');
   modal.classList.remove('d-block');
   modal.classList.add('none');
-  removeParametro();
+  //removeParametro();
 });
 
 const closeConinue = modal.querySelector('.btn-continue');
@@ -60,7 +60,7 @@ closeConinue.addEventListener('click', function() {
   modal.setAttribute('data-bs-keyboard', '');
   modal.classList.remove('d-block');
   modal.classList.add('none');
-  removeParametro();
+  //removeParametro();
 });
 
 function exibirModalSpinner(param) {

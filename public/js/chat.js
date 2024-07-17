@@ -13,6 +13,20 @@ function getUrl() {
     const chat = url[0];
     const user = url[1];
 
+    if(url[2]){
+        let message = url[2];
+
+        message = message.split('='); 
+        const parametro = message[0];
+        const value = message[1];
+    
+        if(parametro == "menssagem" && value == "enviada"){
+            const action = "show";
+            exibirModal(action);
+        }
+    }
+    
+
     if ((parseInt(chat.split('=')[1]) > 0) && (parseInt(user.split('=')[1]) > 0)) {
         const url = `/getMessages?${chat}&${user}`;
         request(url);
@@ -99,7 +113,7 @@ function renderMessages(messageChat) {
     });
 
     closeModalSpinner();
-    scrollBottom();
+    //scrollBottom();
 }
 
 function removerFilhos() {
