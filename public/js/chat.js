@@ -1,14 +1,12 @@
 let message = Array();
 let id_user = getIduserSession();
-let time = 10000;
+const time = 15000;
+var requisisao = true;
 
-
-
-getUrl();
+bady.addEventListener('onload', getUrl());
 
 function getUrl() {
     let url = window.location.search;
-
     url = url.replace(/\?/, "");
     url = url.split('&');
 
@@ -16,29 +14,42 @@ function getUrl() {
     const user = url[1];
 
     if ((parseInt(chat.split('=')[1]) > 0) && (parseInt(user.split('=')[1]) > 0)) {
-        url = `/getMessages?${chat}&${user}`;
-        getMessages(url);
+        const url = `/getMessages?${chat}&${user}`;
+        request(url);
         exibirModalSpinner("show");
     }
 }
 
-function getMessages(url) {
-    const interval = setInterval(() => {
-        fetch(url)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                if (Array.isArray(data) && data.length >= 0) {
-                    verificacao(data);
-                    console.log(time);
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+function request(url) {
 
-    }, time);
+    try {
+        getMessages(url);
+        requisisao = false;
+    } catch (error) {
+        console.log(error);
+        requisisao = false;
+    }
+
+    if (!requisisao) {
+        setInterval(() => {
+            getMessages(url);
+        }, time);
+    }
+}
+
+function getMessages(url) {
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            if (Array.isArray(data) && data.length >= 0) {
+                verificacao(data);
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 function verificacao(chat) {

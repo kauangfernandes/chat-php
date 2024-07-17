@@ -1,4 +1,5 @@
-getUrl();
+const bady = document.querySelector("#bady");
+bady.addEventListener('onload', getUrl());
 
 function getUrl(){
   let url = window.location.search;

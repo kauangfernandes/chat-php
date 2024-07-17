@@ -108,8 +108,9 @@ FROM messages m
 INNER JOIN  users u
 ON(m.id_user=u.id_user)
 WHERE m.id_chat = 1
+orde
 
 USE chat;
 INSERT INTO messages (message, id_user, id_chat) VALUES
-("Oi, ola ola", 1, 1);
+("Oi, oi oi..", 2, 1);
 */

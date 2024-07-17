@@ -25,7 +25,7 @@
     <title><?php echo $title . " | " . $nameApp ?></title>
 </head>
 
-<body>
+<body id="bady">
     <?php require_once "header.php"; ?>
 
     <div class="container py-5">

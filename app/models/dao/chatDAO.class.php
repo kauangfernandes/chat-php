@@ -30,9 +30,12 @@
         public function getAllMessageChat($chat){
             try {
                 $sql = "
-                    SELECT * 
-                    FROM messages 
-                    WHERE id_chat = ?
+                    SELECT *
+                    FROM messages m
+                    INNER JOIN  users u
+                    ON(m.id_user=u.id_user)
+                    WHERE m.id_chat = ?
+                    ORDER BY m.id_message
                 ";
                 $stm = $this->db->prepare($sql);
                 $stm->bindValue(1, $chat->__get(attr:"id_chat"));
