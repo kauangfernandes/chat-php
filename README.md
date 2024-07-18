@@ -12,8 +12,6 @@
     <li>Envio e recebimento de mensagens em tempo real (simulação)</li>
     <li>Interface básica para interação dos usuários</li>
     <li>Demonstração de conceitos POO em um contexto de chat</li>
-    <li></li>
-    <li></li>
 </ul>
 
 <h2>Tecnologias Utilizadas:</h2>
@@ -35,4 +33,14 @@
     Sinta-se à vontade para contribuir com sugestões, melhorias ou correções de bugs.
 </p>
 
+<<<<<<< HEAD
 <h2>Licença:</h2>
+=======
+<h2>Links:</h2>
+<ul>
+    <li>Framework: <a href="https://github.com/kauangfernandes/mini-framework-php.git">Mini-Framework-Php</a></li>
+</ul>
+
+<h2>Licença:</h2>
+
+>>>>>>> 3a8747d8537422dd5a372ab5b71692428c1cf770
